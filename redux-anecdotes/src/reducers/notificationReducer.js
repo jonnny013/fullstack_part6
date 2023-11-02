@@ -14,7 +14,7 @@ const notificationSlice = createSlice({
             state.message = ` You voted for: ${anecdoteName.content}`
         }
         if (action.payload.anecdote) {
-            state.message = `You created a new anecdote: ${action.payload.anecdote.content}`
+            state.message = `You created a new anecdote: ${action.payload.anecdote}`
         } 
     },
     removeNotification(state) {

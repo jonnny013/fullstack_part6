@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 const AnecdoteList = () => {
     const anecdotes = useSelector(({filter, anecdotes}) => {
-      return anecdotes.filter(anec => anec.content.match(filter))
+      console.log(anecdotes.map(a => a))
+      return anecdotes.filter(a => a.content.match(filter))
+      
     })
     const dispatch = useDispatch()
 
