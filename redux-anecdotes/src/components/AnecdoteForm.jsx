@@ -10,7 +10,7 @@ const AnecdoteForm = () => {
     const anecdote = event.target.newAnecdote.value
     event.target.newAnecdote.value = ''
     dispatch(createAnecdote(anecdote))
-    dispatch(setNotification({anecdote}))
+    dispatch(setNotification(`You created a new anecdote: ${anecdote}`, 2))
   }
 
   return (

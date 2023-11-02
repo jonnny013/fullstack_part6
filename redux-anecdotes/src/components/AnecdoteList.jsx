@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 const AnecdoteList = () => {
     const anecdotes = useSelector(({filter, anecdotes}) => {
-      console.log(anecdotes.map(a => a))
       return anecdotes.filter(a => a.content.match(filter))
       
     })
@@ -12,8 +11,8 @@ const AnecdoteList = () => {
 
     const vote = ( id) => {
       const anecdoteName = anecdotes.find(n => n.id === id)
-    dispatch(setNotification({id: anecdoteName}))
-    dispatch(addVote(id))
+    dispatch(setNotification(`You voted for: ${anecdoteName.content}`, 5))
+    dispatch(addVote(anecdoteName))
     }
   return (
     <div>
