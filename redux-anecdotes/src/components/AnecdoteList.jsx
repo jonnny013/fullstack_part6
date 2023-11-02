@@ -10,7 +10,6 @@ const AnecdoteList = () => {
 
     const vote = ( id) => {
       const anecdoteName = anecdotes.find(n => n.id === id)
-      console.log(anecdoteName)
     dispatch(setNotification({id: anecdoteName}))
     dispatch(addVote(id))
     }
