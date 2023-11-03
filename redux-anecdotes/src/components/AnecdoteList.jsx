@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 const AnecdoteList = () => {
     const anecdotes = useSelector(({filter, anecdotes}) => {
       return anecdotes.filter(a => a.content.match(filter))
-      
     })
     const dispatch = useDispatch()
 
