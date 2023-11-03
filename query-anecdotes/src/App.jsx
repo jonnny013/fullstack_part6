@@ -5,18 +5,19 @@ import { getAnecdotes } from './requests'
 
 const App = () => {
 
-  const handleVote = (anecdote) => {
-    console.log('vote')
-  }
-
-  const result = useQuery({
+    const result = useQuery({
     queryKey: ['anecdotes'],
     queryFn: getAnecdotes,
     retry: 1
   })
-  console.log(JSON.parse(JSON.stringify(result)))
 
   const anecdotes = result.data
+
+  const handleVote = (anecdote) => {
+    console.log('vote')
+  }
+
+
 
   if ( result.isLoading ) {
     return <div>loading data...</div>
