@@ -30,7 +30,6 @@ const App = () => {
     mutationFn: updateNote,
     onSuccess: (updatedNote) => {
       const notes = queryClient.getQueryData(['notes'])
-      console.log(updatedNote)
       queryClient.setQueryData(['notes'], notes.map((note) => {
         if (note.id === updatedNote.id) {
           return {...note, important: updatedNote.important}
